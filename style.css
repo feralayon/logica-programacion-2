@@ -1,0 +1,122 @@
+/* Reinicia márgenes y rellenos predeterminados del navegador para tener un punto de partida visual uniforme en todo el HTML. */
+* {
+    box-sizing: border-box; /* Hace que el ancho y alto incluyan padding y border, facilitando el control del tamaño de los elementos del HTML. */
+    margin: 0; /* Elimina márgenes por defecto para evitar separaciones no deseadas entre elementos del HTML. */
+    padding: 0; /* Elimina rellenos por defecto para controlar los espacios exclusivamente desde este archivo CSS. */
+}
+
+/* Aplica estilos generales al cuerpo del documento HTML. */
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Define una tipografía simple y legible para todos los textos mostrados en el HTML. */
+    background: linear-gradient(135deg, #dfe9f3, #ffffff); /* Crea un fondo suave para mejorar la presentación visual de la interfaz. */
+    color: #1f2937; /* Establece un color de texto oscuro para lograr buen contraste con el fondo claro. */
+    min-height: 100vh; /* Hace que el body tenga al menos el alto completo de la ventana del navegador. */
+}
+
+/* Centra el contenido principal que fue creado en el HTML con la clase contenedor-principal. */
+.contenedor-principal {
+    min-height: 100vh; /* Permite que el contenedor principal ocupe toda la altura visible de la pantalla. */
+    display: flex; /* Activa flexbox para centrar la tarjeta del conversor dentro del contenedor. */
+    justify-content: center; /* Centra horizontalmente la tarjeta dentro del body. */
+    align-items: center; /* Centra verticalmente la tarjeta dentro del body. */
+    padding: 20px; /* Añade espacio interno para que la tarjeta no quede pegada a los bordes en pantallas pequeñas. */
+}
+
+/* Da forma visual a la tarjeta que contiene todos los elementos del conversor definidos en el HTML. */
+.tarjeta-conversor {
+    background-color: #ffffff; /* Establece un fondo blanco para diferenciar la tarjeta del fondo general del body. */
+    width: 100%; /* Permite que la tarjeta use todo el ancho disponible en dispositivos pequeños. */
+    max-width: 520px; /* Limita el ancho máximo para mantener una lectura cómoda en pantallas grandes. */
+    padding: 30px; /* Agrega espacio interno entre el borde de la tarjeta y su contenido HTML. */
+    border-radius: 16px; /* Redondea las esquinas para dar una apariencia más amigable a la interfaz. */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); /* Añade sombra para separar visualmente la tarjeta del fondo. */
+}
+
+/* Estiliza el título principal del HTML. */
+.titulo-principal {
+    font-size: 32px; /* Aumenta el tamaño del título para que destaque sobre el resto del contenido. */
+    margin-bottom: 12px; /* Separa el título del párrafo descriptivo que está debajo en el HTML. */
+}
+
+/* Estiliza el texto descriptivo ubicado debajo del título. */
+.texto-descriptivo {
+    font-size: 16px; /* Define un tamaño cómodo para el texto explicativo. */
+    margin-bottom: 24px; /* Deja espacio antes de los campos del formulario del HTML. */
+    color: #4b5563; /* Usa un tono más suave para diferenciarlo del título principal. */
+}
+
+/* Da estilo a la etiqueta asociada al input del HTML. */
+.etiqueta-campo {
+    display: block; /* Hace que la etiqueta ocupe toda la línea para organizar mejor el formulario. */
+    margin-bottom: 8px; /* Separa la etiqueta del input que aparece justo debajo. */
+    font-weight: bold; /* Resalta la etiqueta para indicar claramente qué dato debe ingresar el usuario. */
+}
+
+/* Define la apariencia del input donde el usuario escribe la temperatura. */
+.campo-temperatura {
+    width: 100%; /* Hace que el input ocupe todo el ancho disponible dentro de la tarjeta del HTML. */
+    padding: 14px; /* Mejora la comodidad visual y táctil del campo de entrada. */
+    border: 1px solid #cbd5e1; /* Agrega un borde suave para delimitar el input. */
+    border-radius: 10px; /* Redondea el input para mantener coherencia visual con la tarjeta principal. */
+    margin-bottom: 18px; /* Separa el input del contenedor de botones. */
+    font-size: 16px; /* Mantiene legible el texto que el usuario escribe en el campo. */
+}
+
+/* Organiza los botones que se declararon en el HTML. */
+.contenedor-botones {
+    display: flex; /* Coloca los botones en una misma fila siempre que haya espacio disponible. */
+    gap: 12px; /* Agrega una separación uniforme entre los botones del HTML. */
+    flex-wrap: wrap; /* Permite que los botones bajen a otra línea en pantallas reducidas. */
+    margin-bottom: 18px; /* Separa visualmente los botones del mensaje de error. */
+}
+
+/* Aplica estilos base compartidos a ambos botones del HTML. */
+.boton {
+    flex: 1; /* Hace que ambos botones ocupen un ancho equilibrado dentro del contenedor flexible. */
+    min-width: 180px; /* Evita que los botones se encojan demasiado cuando la pantalla es pequeña. */
+    padding: 14px 16px; /* Da altura y espacio interno a los botones para que sean cómodos de usar. */
+    border: none; /* Elimina el borde por defecto del navegador para usar un diseño personalizado. */
+    border-radius: 10px; /* Redondea las esquinas de los botones para mantener el estilo general. */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón para indicar que es interactivo. */
+    font-size: 15px; /* Ajusta el tamaño del texto de los botones para que sea claro y proporcionado. */
+    font-weight: bold; /* Destaca el texto de los botones para mejorar su visibilidad. */
+}
+
+/* Da color principal al botón que ejecuta la conversión desde el input del HTML. */
+.boton-principal {
+    background-color: #2563eb; /* Asigna un color azul llamativo para destacar la acción principal. */
+    color: #ffffff; /* Coloca texto blanco para crear contraste sobre el fondo azul. */
+}
+
+/* Da estilo al botón secundario que abre el prompt desde el HTML. */
+.boton-secundario {
+    background-color: #e5e7eb; /* Usa un color gris claro para diferenciar la acción secundaria de la principal. */
+    color: #111827; /* Aplica un color oscuro al texto para asegurar buena legibilidad. */
+}
+
+/* Estiliza el mensaje de error que será controlado desde JavaScript. */
+.mensaje-error {
+    min-height: 24px; /* Reserva espacio en la interfaz para evitar saltos bruscos cuando aparezca un error. */
+    color: #dc2626; /* Usa rojo para comunicar visualmente que existe una validación incorrecta. */
+    font-weight: bold; /* Hace que el mensaje de error sea más evidente para el usuario. */
+    margin-bottom: 18px; /* Separa el mensaje de la zona donde se muestran los resultados. */
+}
+
+/* Organiza la sección de resultados generados por JavaScript. */
+.contenedor-resultados {
+    background-color: #f8fafc; /* Crea un bloque visual suave para resaltar las salidas del programa. */
+    border: 1px solid #e2e8f0; /* Delimita la caja de resultados para separarla del resto del contenido. */
+    border-radius: 12px; /* Redondea las esquinas de la caja de resultados. */
+    padding: 20px; /* Agrega espacio interno para que los resultados respiren visualmente. */
+}
+
+/* Da estilo a cada línea de resultado mostrada en el DOM. */
+.resultado-texto {
+    font-size: 18px; /* Hace más visibles los resultados de Fahrenheit y Kelvin dentro del HTML. */
+    margin-bottom: 10px; /* Separa cada resultado del siguiente para facilitar la lectura. */
+}
+
+/* Evita margen extra en el último resultado para mantener una caja más limpia. */
+.resultado-texto:last-child {
+    margin-bottom: 0; /* Elimina la separación inferior del último párrafo de resultados. */
+}
