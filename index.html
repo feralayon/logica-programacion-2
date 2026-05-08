@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres para que el HTML muestre tildes y símbolos correctamente. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Permite que la interfaz se adapte al ancho del dispositivo y se relacione con los estilos responsivos del archivo CSS. -->
+    <title>Conversor de Temperatura</title> <!-- Define el título que aparece en la pestaña del navegador para identificar la página. -->
+    <link rel="stylesheet" href="./style.css"> <!-- Conecta este archivo HTML con el archivo de estilos CSS para aplicar colores, tamaños y distribución visual. -->
+</head>
+<body>
+    <main class="contenedor-principal"> <!-- Agrupa el contenido principal de la página y usa una clase que será estilizada desde estilos.css. -->
+        <section class="tarjeta-conversor"> <!-- Crea una sección visual para encapsular el formulario y los resultados, también vinculada con estilos.css. -->
+            <h1 class="titulo-principal">Conversor de grados Celsius</h1> <!-- Muestra el título principal de la aplicación para orientar al usuario sobre la función del programa. -->
+            <p class="texto-descriptivo">Ingresa una temperatura en grados Celsius para convertirla a Fahrenheit y Kelvin.</p> <!-- Explica al usuario qué debe hacer dentro de la interfaz. -->
+
+            <label for="temperaturaCelsius" class="etiqueta-campo">Temperatura en grados Celsius</label> <!-- Relaciona el texto descriptivo con el input mediante el atributo for y mejora la accesibilidad. -->
+            <input type="text" id="temperaturaCelsius" class="campo-temperatura" placeholder="Ejemplo: 45"> <!-- Permite que el usuario escriba la temperatura; se deja como text para que JavaScript valide si realmente es un número. -->
+
+            <div class="contenedor-botones"> <!-- Agrupa los botones para organizarlos visualmente con ayuda del archivo CSS. -->
+                <button id="botonConvertir" class="boton boton-principal">Convertir temperatura</button> <!-- Ejecuta la lógica principal del archivo funciones.js al hacer clic. -->
+                <button id="botonSolicitarPrompt" class="boton boton-secundario">Ingresar por prompt</button> <!-- Ejecuta la alternativa de captura por prompt usando la lógica de funciones.js. -->
+            </div>
+
+            <p id="mensajeError" class="mensaje-error"></p> <!-- Muestra mensajes de validación o error generados desde JavaScript cuando la entrada no es numérica. -->
+
+            <div class="contenedor-resultados"> <!-- Contiene las salidas calculadas para mostrarlas en pantalla de manera ordenada. -->
+                <p id="resultadoKelvin" class="resultado-texto">Grados Kelvin: --</p> <!-- Presenta el resultado de la conversión a Kelvin calculada en funciones.js. -->
+                <p id="resultadoFahrenheit" class="resultado-texto">Grados Fahrenheit: --</p> <!-- Presenta el resultado de la conversión a Fahrenheit calculada en funciones.js. -->
+            </div>
+        </section>
+    </main>
+
+    <script src="./script.js"></script> <!-- Conecta el HTML con el archivo JavaScript que contiene la lógica, validaciones y eventos del programa. -->
+</body>
+</html>
